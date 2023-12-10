@@ -74,9 +74,14 @@ const Posts = () => {
             formDataToSend.append("title", formData.title);
             formDataToSend.append("content", formData.content);
             formDataToSend.append("image", image);
-
             const respone = await adminService.createPost(formDataToSend);
-
+            setOpen(false);
+            setFormData({
+                title: "",
+                content: "",
+            });
+            setImage(null);
+            setImagePreview(null);
             setPosts([...posts, respone.data.data]);
         } catch (error) {
             setError(error.respone.data.message);
