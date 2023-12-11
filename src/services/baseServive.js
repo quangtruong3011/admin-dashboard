@@ -4,7 +4,7 @@ class BaseService {
     baseURL;
     http;
 
-    constructor(baseURL = "http://localhost:8000/api") {
+    constructor(baseURL = "https://backend-jk5n.onrender.com/api") {
         this.baseURL = baseURL;
         this.http = axios.create({
             baseURL: this.baseURL,
@@ -19,10 +19,6 @@ class BaseService {
                 config.headers = {
                     "content-type": "application/json",
                     "x-access-token": token,
-                    // "Access-Control-Allow-Origin": "*",
-                    // "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
-                    // "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token",
-                    // ...config.headers,
                 };
                 return config;
             },
