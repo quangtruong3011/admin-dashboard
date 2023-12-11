@@ -19,10 +19,10 @@ class BaseService {
                 config.headers = {
                     "content-type": "application/json",
                     "x-access-token": token,
-                    "Access-Control-Allow-Origin": "*",
-                    "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
-                    "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token",
-                    ...config.headers,
+                    // "Access-Control-Allow-Origin": "*",
+                    // "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+                    // "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token",
+                    // ...config.headers,
                 };
                 return config;
             },

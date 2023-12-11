@@ -49,7 +49,11 @@ const RegisterPage = () => {
                 setError(errors);
                 return;
             } else {
-                setError(error?.response?.data?.message);
+                const errorMessage = {};
+                if (error?.response?.data?.message) {
+                    errorMessage.message = error?.response?.data?.message;
+                }
+                setError(errorMessage);
             }
         } finally {
             setLoading(false);

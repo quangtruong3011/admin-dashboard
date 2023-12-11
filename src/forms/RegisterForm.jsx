@@ -51,7 +51,7 @@ const RegisterForm = ({ formData, handleChange, handleSubmit, loading, error }) 
                 helperText={error?.password}
                 autoComplete="current-password"
             />
-            {error && <p style={{ color: "red" }}>{error}</p>}
+            {error?.message && <p style={{ color: "red" }}>{error.message}</p>}
             {loading ? (
                 <LoadingButton
                     type="submit"

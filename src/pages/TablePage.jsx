@@ -55,7 +55,7 @@ const TablePage = () => {
             setLoading(true);
             await tableValidationSchema.validate(formData, { abortEarly: false });
             if (id) {
-                const table = await adminService.updateTable(id, formData);
+                await adminService.updateTable(id, formData);
                 setTables(tables.map((table) => (table.tableId === id ? { ...table, ...formData } : table)));
             } else {
                 const table = await adminService.createTable(formData);
